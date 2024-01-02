@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "db23afa6-43b7-46ed-869a-b6e042b678ae",
+		"name": "Sublime Data Systems",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26708201",
+		"_collection_link": "https://bold-trinity-207194.postman.co/workspace/My-Workspace~36b7cbb9-1c45-4037-82ee-ec480d2654e3/collection/26708201-db23afa6-43b7-46ed-869a-b6e042b678ae?action=share&source=collection_link&creator=26708201"
+	},
+	"item": [
+		{
+			"name": "Customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2,\r\n    \"first_name\": \"Karan\",\r\n    \"last_name\": \"Gurjar\",\r\n    \"city\": \"indore\",\r\n    \"company\": \"Clumpcoder\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/createUser",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"createUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Customer Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/customers/1",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"customers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Products ",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDM3NTM0OTR9.D2oFjKFXGGE9gihSXbGWD12XT38JNgM3BlyfbrYbHzE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/getCustomer?first_name =Karan&last_name=Gurjar&city=indore&page=1&limit=1",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"getCustomer"
+					],
+					"query": [
+						{
+							"key": "first_name ",
+							"value": "Karan"
+						},
+						{
+							"key": "last_name",
+							"value": "Gurjar"
+						},
+						{
+							"key": "city",
+							"value": "indore"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get with City",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/indore",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"indore"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
